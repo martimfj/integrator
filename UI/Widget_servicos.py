@@ -39,18 +39,22 @@ class Ui_tela_servicos(object):
         self.bg_servicos.setStyleSheet("background-image: url(:/tela_servicos/tela_servicos.png);")
         self.bg_servicos.setText("")
         self.bg_servicos.setObjectName("bg_servicos")
-        self.webview_mapagoogle = QtWebKitWidgets.QWebView(tela_servicos)
+
+        self.webview_mapagoogle = QtWebKitWidgets.QWebView(self)
         self.webview_mapagoogle.setGeometry(QtCore.QRect(10, 12, 616, 406))
         self.webview_mapagoogle.setUrl(QtCore.QUrl("about:blank"))
         self.webview_mapagoogle.setObjectName("webview_mapagoogle")
-        self.botao_lugares_reco = QtGui.QCommandLinkButton(tela_servicos)
+        self.webview_mapagoogle.load(QUrl("https://www.google.com.br/maps/@-23.5979074,-46.6773694,16.96z"))
+
+        self.botao_lugares_reco = QtGui.QCommandLinkButton(self)
         self.botao_lugares_reco.setGeometry(QtCore.QRect(4, 436, 92, 37))
         self.botao_lugares_reco.setText("")
+
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../botaoenviar - 42x42.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.botao_lugares_reco.setIcon(icon1)
         self.botao_lugares_reco.setObjectName("botao_lugares_reco")
-        self.botao_voltar_servicos = QtGui.QCommandLinkButton(tela_servicos)
+        self.botao_voltar_servicos = QtGui.QCommandLinkButton(self)
         self.botao_voltar_servicos.setGeometry(QtCore.QRect(522, 436, 110, 37))
         self.botao_voltar_servicos.setText("")
         self.botao_voltar_servicos.setIcon(icon1)
@@ -62,5 +66,11 @@ class Ui_tela_servicos(object):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("tela_servicos", "Integrator"))
+
+if __name__ == '__main__':
+    app = QtGui.QApplication([])
+    window = Ui_tela_servicos()
+    window.show()
+    app.exec_()
 
 

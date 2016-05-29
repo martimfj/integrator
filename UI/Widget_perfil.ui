@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>tela_perfil</class>
+ <widget class="QWidget" name="tela_perfil">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -372,7 +372,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../../../Documents/GitHub/integrator/tela_perfil.qrc"/>
+  <include location="../Resources/tela_perfil.qrc"/>
  </resources>
  <connections/>
 </ui>

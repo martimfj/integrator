@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>tela_editar_perfil</class>
+ <widget class="QWidget" name="tela_editar_perfil">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -395,7 +395,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../tela_editarperfil.qrc"/>
+  <include location="../Resources/tela_editarperfil.qrc"/>
  </resources>
  <connections/>
 </ui>
