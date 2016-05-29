@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="tela_principal">
+    <file>background_telainicial.png</file>
+  </qresource>
+</RCC>
