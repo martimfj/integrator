@@ -6,6 +6,8 @@
 
 from PyQt4 import QtCore, QtGui
 from firebase import firebase 
+from ver_perfis import Ui_JanelPerfil
+from calendario_e_todo import Ui_Calendario
 import tela_login_rc #Arquivo Resource da tela de login convertido em Py
 import tela_principal_rc #Arquivo Resource da tela menu convertido em Py
 import tela_cadastro_rc
@@ -122,23 +124,25 @@ class MainWindow(QtGui.QMainWindow):
                 QtGui.QMessageBox.warning(self, "Erro de validação", "Usuario Inválido")
 
     def login(self):
-        Tela_menu = LoggedWidget(self)
-        self.setCentralWidget(Tela_menu)
+        self.Tela_menu = LoggedWidget(self)
+        self.setCentralWidget(self.Tela_menu)
 
     def novousuario(self):
-    	cadastro = Widget_Cadastro(self)
-    	self.setCentralWidget(cadastro)
+    	self.cadastro = Widget_Cadastro(self)
+    	self.setCentralWidget(self.cadastro)
 
     def voltar_login(self):
         self.setupUi()
         self.setCentralWidget(self.Widget_login)
+        
+
 
 class LoggedWidget(QtGui.QWidget):
-    def __init__(self, parent):
-        super(LoggedWidget, self).__init__(parent)
+    def __init__(self, logprin):
+        super(LoggedWidget, self).__init__()
         self.setupUi()
         self.fb = firebase.FirebaseApplication("https://dsoftintegrator.firebaseio.com/")
-
+        self.logprin = logprin
     def setupUi(self):
         self.setObjectName("Inicial")
         self.resize(640, 480)
@@ -191,10 +195,20 @@ class LoggedWidget(QtGui.QWidget):
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+        self.botao_usuarios.clicked.connect(self.usuariosClicked)
+        self.botao_calendario.clicked.connect(self.calendarioClicked)
+        
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("Inicial", "Form"))
+        
+    def usuariosClicked(self):
+        self.perfis = Ui_JanelPerfil()
+        self.perfis.show()
+    def calendarioClicked(self):
+        self.calendario = Ui_Calendario(self)
+        self.calendario.show()
 
 class Widget_Cadastro(QtGui.QWidget):
     def __init__(self, parent):
