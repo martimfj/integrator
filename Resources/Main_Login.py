@@ -12,6 +12,12 @@ import tela_login_rc #Arquivo Resource da tela de login convertido em Py
 import tela_principal_rc #Arquivo Resource da tela menu convertido em Py
 import tela_cadastro_rc
 
+import tela_servicos_rc
+import tela_servicos_recomendados_rc
+from PyQt4.QtGui import QApplication
+from PyQt4.QtCore import QUrl
+from PyQt4.QtWebKit import QWebView
+
 class MainWindow(QtGui.QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -137,6 +143,15 @@ class MainWindow(QtGui.QMainWindow):
         
 
 
+    def abrir_servicos(self):
+        servicos = Widget_Servicos(self)
+        self.setCentralWidget(servicos)
+
+    def Servicos_reco_click(self):
+        self.servicos_reco = Widget_Servicos_recomendados()
+        self.servicos_reco.show()
+
+
 class LoggedWidget(QtGui.QWidget):
     def __init__(self, logprin):
         super(LoggedWidget, self).__init__()
@@ -192,6 +207,8 @@ class LoggedWidget(QtGui.QWidget):
         self.botao_infos.raise_()
         self.botao_usuarios.raise_()
         self.botao_editarperfil.raise_()
+        self.botao_servicos.clicked.connect(self.parent().abrir_servicos)
+        
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -691,7 +708,103 @@ class Widget_Cadastro(QtGui.QWidget):
             self.checkButtons()
         else:
             QtGui.QMessageBox.warning(self, "Erro na confirmação", "As senhas não coincidem")
+
+class Widget_Servicos(QtGui.QWidget):
+    def __init__(self, parent):
+        super(Widget_Servicos, self).__init__(parent)
+        self.setupUi()
+
+    def setupUi(self):
+        self.setObjectName("tela_servicos")
+        self.resize(640, 480)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
+        self.setSizePolicy(sizePolicy)
+        self.setMinimumSize(QtCore.QSize(640, 480))
+        self.setMaximumSize(QtCore.QSize(640, 480))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        self.bg_servicos = QtGui.QLabel(self)
+        self.bg_servicos.setGeometry(QtCore.QRect(-2, 0, 640, 480))
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.bg_servicos.sizePolicy().hasHeightForWidth())
+        self.bg_servicos.setSizePolicy(sizePolicy)
+        self.bg_servicos.setMinimumSize(QtCore.QSize(640, 480))
+        self.bg_servicos.setMaximumSize(QtCore.QSize(640, 480))
+        self.bg_servicos.setStyleSheet("background-image: url(:/tela_servicos/tela_servicos.png);")
+        self.bg_servicos.setText("")
+        self.bg_servicos.setObjectName("bg_servicos")
+
+        self.webview_mapagoogle = QWebView(self)
+        self.webview_mapagoogle.setGeometry(QtCore.QRect(10, 12, 616, 406))
+        self.webview_mapagoogle.setUrl(QtCore.QUrl("about:blank"))
+        self.webview_mapagoogle.setObjectName("webview_mapagoogle")
+        self.webview_mapagoogle.load(QUrl("https://www.google.com.br/maps/@-23.5979074,-46.6773694,16.96z"))
+
+        self.botao_voltar_servicos = QtGui.QCommandLinkButton(self)
+        self.botao_voltar_servicos.setGeometry(QtCore.QRect(4, 436, 92, 37))
+        self.botao_voltar_servicos.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../botaoenviar - 42x42.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.botao_voltar_servicos.setIcon(icon1)
+        self.botao_voltar_servicos.setObjectName("botao_voltar_servicos")
+        self.botao_voltar_servicos.clicked.connect(self.parent().login)
+
+        self.botao_lugares_reco = QtGui.QCommandLinkButton(self)
+        self.botao_lugares_reco.setGeometry(QtCore.QRect(522, 436, 110, 37))
+        self.botao_lugares_reco.setText("")
+        self.botao_lugares_reco.setIcon(icon1)
+        self.botao_lugares_reco.setObjectName("botao_lugares_reco")
+        self.botao_lugares_reco.clicked.connect(self.parent().Servicos_reco_click)
+
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self)
+
+    def retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.setWindowTitle(_translate("tela_servicos", "Integrator"))
+
+class Widget_Servicos_recomendados(QtGui.QWidget):
+    def __init__ (self):
+        super(Widget_Servicos_recomendados, self).__init__()
+        self.setupUi()
+
+    def setupUi(self):
+        self.setObjectName("tela_servicos_recomendados")
+        self.resize(640, 480)
+        self.move(300, 300)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.sizePolicy().hasHeightForWidth())
+        self.setSizePolicy(sizePolicy)
+        self.setMinimumSize(QtCore.QSize(640, 480))
+        self.setMaximumSize(QtCore.QSize(640, 480))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        self.bg_servicos_recomendados = QtGui.QLabel(self)
+        self.bg_servicos_recomendados.setGeometry(QtCore.QRect(-1, 0, 640, 480))
+        self.bg_servicos_recomendados.setStyleSheet("background-image: url(:/tela_servicos_recomendados/tela_servicos_recomendados.png);")
+        self.bg_servicos_recomendados.setText("")
+        self.bg_servicos_recomendados.setObjectName("bg_servicos_recomendados")
+
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self)
+
+    def retranslateUi(self):
+        _translate = QtCore.QCoreApplication.translate
+        self.setWindowTitle(_translate("tela_servicos_recomendados", "Integrator"))
         
+
+
+
+
 
 #fazer a qline edit mudar de cor conforme o texto ta certo ou errado
 #checar se o usuario ja existe
@@ -700,7 +813,8 @@ class Widget_Cadastro(QtGui.QWidget):
 #esqueci a senha, manda email para a pessoa
 #linkar o calendário com o menu
 #linkar a aba de perfil com o menu
-#linkar a aba de serviços com o menu
+#linkar a aba editar perfil com o menu
+#linkar a aba de serviços com o menu e 
 
 
 
