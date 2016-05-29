@@ -639,7 +639,7 @@ class Widget_Cadastro(QtGui.QWidget):
         user_count += 1
         fb.put("/userCount",name = "count", data = user_count)
 
-        fb.put("/users/", name = self.usuario, data = {'name' : self.usuario, 'password' : self.novasenha, 'nome': self.nome, 'nascimento': self.data, 'email' : self.email, 'telefone' : self.telefone,
+        fb.put("/users/", name = self.usuario, data = {'name' : self.usuario, 'password' : self.novasenha, 'nome': self.nome, 'aniversario': self.data, 'email' : self.email, 'telefone' : self.telefone,
         'facebook': self.faceb, 'snapchat': self.snap, 'instagram': self.insta, 'entidade': "-", 'semestre': self.semestre, 'curso': self.curso})
 
         self.checkButtons
