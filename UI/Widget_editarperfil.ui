@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Resources/system_icon.png</normaloff>../Resources/system_icon.png</iconset>
+    <normaloff>../../../../Desktop/Integrator/Resources/system_icon.png</normaloff>../../../../Desktop/Integrator/Resources/system_icon.png</iconset>
   </property>
   <widget class="QLabel" name="bg_perfil">
    <property name="geometry">
@@ -373,7 +373,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaoenviar - 42x42.png</normaloff>../Resources/botaoenviar - 42x42.png</iconset>
+     <normaloff>../../../../Desktop/Integrator/Resources/botaoenviar - 42x42.png</normaloff>../../../../Desktop/Integrator/Resources/botaoenviar - 42x42.png</iconset>
    </property>
   </widget>
   <widget class="QCommandLinkButton" name="botao_enviaredicoes">
@@ -390,12 +390,12 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaoenviar - 42x42.png</normaloff>../Resources/botaoenviar - 42x42.png</iconset>
+     <normaloff>../../../../Desktop/Integrator/Resources/botaoenviar - 42x42.png</normaloff>../../../../Desktop/Integrator/Resources/botaoenviar - 42x42.png</iconset>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="../Resources/tela_editarperfil.qrc"/>
+  <include location="../tela_editarperfil.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -372,7 +372,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../Resources/tela_perfil.qrc"/>
+  <include location="../../../Documents/GitHub/integrator/tela_perfil.qrc"/>
  </resources>
  <connections/>
 </ui>
