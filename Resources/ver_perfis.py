@@ -217,7 +217,7 @@ class Ui_JanelPerfil(QtGui.QMainWindow):
         self.label_2.setText(_translate("MainWindow", "Nome do aluno:"))
         self.groupBox.setTitle(_translate("MainWindow", "Dados"))
         self.label_3.setText(_translate("MainWindow", "Nome"))
-        self.label_4.setText(_translate("MainWindow", "Idade"))
+        self.label_4.setText(_translate("MainWindow", "Semestre"))
         self.label_5.setText(_translate("MainWindow", "Aniversário"))
         self.label_7.setText(_translate("MainWindow", "Email (Insper)"))
         self.label_6.setText(_translate("MainWindow", "Curso"))
@@ -240,7 +240,7 @@ class Ui_JanelPerfil(QtGui.QMainWindow):
         self.current_name = firebase.get("/users", "{0}".format(self.current_slot))
         
         self.lineEdit.setText(self.current_name["nome"])
-        self.lineEdit_2.setText(self.current_name["idade"])
+        self.lineEdit_2.setText(self.current_name["semestre"])
         self.lineEdit_7.setText(self.current_name["email"])
         self.lineEdit_10.setText(self.current_name["telefone"])
         self.lineEdit_6.setText(self.current_name["facebook"])

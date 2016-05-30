@@ -693,25 +693,34 @@ class Widget_Cadastro(QtGui.QWidget):
         self.parent().voltar_login()
 
     def ConfirmaSenha(self):
+        fb = firebase.FirebaseApplication("https://dsoftintegrator.firebaseio.com/")
+        
+        
         self.nome = self.input_nome.text()
         self.data = self.input_nasci.text()
         self.usuario = self.input_newuser.text()
         self.novasenha = self.input_newpw.text()
         self.confnovasenha = self.input_newpw_conf.text()
+        
+        usuarios_existentes = []
+        dicionario = fb.get("/users", None)
+        for usuario in dicionario:
+            usuarios_existentes.append(usuario)
 
+        for usuario in usuarios_existentes:
+            if self.usuario == usuario:
+                QtGui.QMessageBox.warning(self, "Erro na confirmação", "Usuario já existente")
+        
         if self.novasenha == self.confnovasenha:
             self.newuser()
             self.checkButtons()
         else:
             QtGui.QMessageBox.warning(self, "Erro na confirmação", "As senhas não coincidem")
+        
 
 #fazer a qline edit mudar de cor conforme o texto ta certo ou errado
-#checar se o usuario ja existe
-#confirmação de cadastro via email
 #preencha os campos mínimos por favor
 #esqueci a senha, manda email para a pessoa
-#linkar o calendário com o menu
-#linkar a aba de perfil com o menu
 #linkar a aba editar perfil com o menu
 
 
