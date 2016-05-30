@@ -8,6 +8,7 @@ from PyQt4 import QtCore, QtGui
 from firebase import firebase 
 from ver_perfis import Ui_JanelPerfil
 from calendario_e_todo import Ui_Calendario
+from Widget_servicos import Widget_Servicos
 import tela_login_rc #Arquivo Resource da tela de login convertido em Py
 import tela_principal_rc #Arquivo Resource da tela menu convertido em Py
 import tela_cadastro_rc
@@ -141,13 +142,7 @@ class MainWindow(QtGui.QMainWindow):
         self.setupUi()
         self.setCentralWidget(self.Widget_login)
 
-    def abrir_servicos(self):
-        servicos = Widget_Servicos(self)
-        self.setCentralWidget(servicos)
 
-    def Servicos_reco_click(self):
-        self.servicos_reco = Widget_Servicos_recomendados()
-        self.servicos_reco.show()
 
 
 class LoggedWidget(QtGui.QWidget):
@@ -205,7 +200,7 @@ class LoggedWidget(QtGui.QWidget):
         self.botao_infos.raise_()
         self.botao_usuarios.raise_()
         self.botao_editarperfil.raise_()
-        self.botao_servicos.clicked.connect(self.parent().abrir_servicos)
+        self.botao_servicos.clicked.connect(self.abrir_servicos)
         
 
         self.retranslateUi()
@@ -224,6 +219,9 @@ class LoggedWidget(QtGui.QWidget):
     def calendarioClicked(self):
         self.calendario = Ui_Calendario(self)
         self.calendario.show()
+    def abrir_servicos(self):
+        self.servicos = Widget_Servicos()
+        self.servicos.show()
 
 class Widget_Cadastro(QtGui.QWidget):
     def __init__(self, parent):
