@@ -66,6 +66,7 @@ class Widget_Servicos(QtGui.QWidget):
         self.botao_lugares_reco.setObjectName("botao_lugares_reco")
         
         self.botao_lugares_reco.clicked.connect(self.recomendadosClicked)
+        self.botao_voltar_servicos.clicked.connect(self.voltarClicked)
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -77,3 +78,5 @@ class Widget_Servicos(QtGui.QWidget):
     def recomendadosClicked(self):
         self.recomendados = Widget_Servicos_recomendados()
         self.recomendados.show()
+    def voltarClicked(self):
+        self.close()
