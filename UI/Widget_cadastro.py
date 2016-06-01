@@ -6,20 +6,20 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui, QtGui
+from PyQt4 import QtCore, QtGui
 
 class Ui_Widget_Cadastro(object):
     def setupUi(self):
         self.setObjectName("Widget_Cadastro")
         self.resize(635, 480)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../Resources/system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../Imagens/img_icones/system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
         self.setAutoFillBackground(True)
         self.bg_cadastro = QtGui.QLabel(self)
-        self.bg_cadastro.setEnabled(False)
+        self.bg_cadastro.setEnabled(True)
         self.bg_cadastro.setGeometry(QtCore.QRect(0, -2, 640, 486))
-        self.bg_cadastro.setStyleSheet("background-image: url(:/bg/tela_cadastro.png);")
+        self.bg_cadastro.setStyleSheet("background-image: url(:/bg/Imagens/img_bg/tela_cadastro.png);")
         self.bg_cadastro.setText("")
         self.bg_cadastro.setObjectName("bg_cadastro")
         self.input_snapchat = QtGui.QLineEdit(self)
@@ -57,19 +57,19 @@ class Ui_Widget_Cadastro(object):
         self.combo_curso.setFont(font)
         self.combo_curso.setObjectName("combo_curso")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../Resources/icones_cursos/adm.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../Imagens/img_icones/adm.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.combo_curso.addItem(icon1, "")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../Resources/icones_cursos/eco.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("../Imagens/img_icones/eco.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.combo_curso.addItem(icon2, "")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../Resources/icones_cursos/computacao.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("../Imagens/img_icones/comp.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.combo_curso.addItem(icon3, "")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../Resources/icones_cursos/plainicon.com-45939-512px.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("../Imagens/img_icones/mec.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.combo_curso.addItem(icon4, "")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../Resources/icones_cursos/meca.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("../Imagens/img_icones/meca.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.combo_curso.addItem(icon5, "")
         self.combo_semestre = QtGui.QComboBox(self)
         self.combo_semestre.setGeometry(QtCore.QRect(521, 180, 104, 22))
@@ -126,7 +126,7 @@ class Ui_Widget_Cadastro(object):
         font.setFamily("Myriad Pro")
         font.setPointSize(12)
         self.input_newpw.setFont(font)
-        self.input_newpw.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.input_newpw.setInputMethodHints(QtCore.Qt.ImhHiddenText|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhNoPredictiveText)
         self.input_newpw.setText("")
         self.input_newpw.setMaxLength(15)
         self.input_newpw.setFrame(False)
@@ -138,7 +138,7 @@ class Ui_Widget_Cadastro(object):
         font.setFamily("Myriad Pro")
         font.setPointSize(12)
         self.input_newpw_conf.setFont(font)
-        self.input_newpw_conf.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.input_newpw_conf.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.input_newpw_conf.setText("")
         self.input_newpw_conf.setMaxLength(15)
         self.input_newpw_conf.setFrame(False)
@@ -273,8 +273,8 @@ class Ui_Widget_Cadastro(object):
         self.botao_cadastrar.setGeometry(QtCore.QRect(564, 412, 66, 65))
         self.botao_cadastrar.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("../Resources/botao_cadastrar_act.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon7.addPixmap(QtGui.QPixmap("../Resources/botao_cadastrar_inac.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("../Resources/botao_cadastrar_act.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.botao_cadastrar.setIcon(icon7)
         self.botao_cadastrar.setIconSize(QtCore.QSize(50, 50))
         self.botao_cadastrar.setDescription("")
@@ -351,9 +351,3 @@ class Ui_Widget_Cadastro(object):
         self.check_sementes.setText(_translate("Widget_Cadastro", "Sementes Culturais"))
 
 import tela_cadastro_rc
-
-if __name__ == '__main__':
-    app = QtGui.QApplication([])
-    window = MainWindow()
-    window.show()
-    app.exec_()

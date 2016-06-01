@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../system_icon.png</normaloff>../system_icon.png</iconset>
+    <normaloff>../Imagens/img_icones/system_icon.png</normaloff>../Imagens/img_icones/system_icon.png</iconset>
   </property>
   <widget class="QLabel" name="bg_servicos_recomendados">
    <property name="geometry">
@@ -45,7 +45,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/tela_servicos_recomendados/tela_servicos_recomendados.png);</string>
+    <string notr="true">background-image: url(:/tela_servicos_recomendados/Imagens/img_bg/tela_servicos_recomendados.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -53,7 +53,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../tela_servicos_recomendados.qrc"/>
+  <include location="../QRC/tela_servicos_recomendados.qrc"/>
  </resources>
  <connections/>
 </ui>

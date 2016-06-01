@@ -10,8 +10,24 @@
     <height>480</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Integrator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Imagens/img_icones/system_icon.png</normaloff>../Imagens/img_icones/system_icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -30,7 +46,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaog - 269x135.png</normaloff>../Resources/botaog - 269x135.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaog - 269x135.png</normaloff>../Imagens/img_botoes/botaog - 269x135.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -49,7 +65,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/tela_principal/background_telainicial.png);</string>
+    <string notr="true">background-image: url(:/tela_principal/Imagens/img_bg/background_telainicial.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -69,7 +85,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaog - 269x135.png</normaloff>../Resources/botaog - 269x135.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaog - 269x135.png</normaloff>../Imagens/img_botoes/botaog - 269x135.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -92,7 +108,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaop - 150x135.png</normaloff>../Resources/botaop - 150x135.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaop - 150x135.png</normaloff>../Imagens/img_botoes/botaop - 150x135.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -115,7 +131,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaop - 150x135.png</normaloff>../Resources/botaop - 150x135.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaop - 150x135.png</normaloff>../Imagens/img_botoes/botaop - 150x135.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -138,7 +154,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaop - 150x135.png</normaloff>../Resources/botaop - 150x135.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaop - 150x135.png</normaloff>../Imagens/img_botoes/botaop - 150x135.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -155,7 +171,7 @@
   <zorder>botao_editarperfil</zorder>
  </widget>
  <resources>
-  <include location="../Resources/tela_principal.qrc"/>
+  <include location="../QRC/tela_principal.qrc"/>
  </resources>
  <connections/>
 </ui>

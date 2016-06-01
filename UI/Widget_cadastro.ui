@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Resources/system_icon.png</normaloff>../Resources/system_icon.png</iconset>
+    <normaloff>../Imagens/img_icones/system_icon.png</normaloff>../Imagens/img_icones/system_icon.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -33,7 +33,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/bg/tela_cadastro.png);</string>
+    <string notr="true">background-image: url(:/bg/Imagens/img_bg/tela_cadastro.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -126,7 +126,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Resources/icones_cursos/adm.png</normaloff>../Resources/icones_cursos/adm.png</iconset>
+      <normaloff>../Imagens/img_icones/adm.png</normaloff>../Imagens/img_icones/adm.png</iconset>
     </property>
    </item>
    <item>
@@ -135,7 +135,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Resources/icones_cursos/eco.png</normaloff>../Resources/icones_cursos/eco.png</iconset>
+      <normaloff>../Imagens/img_icones/eco.png</normaloff>../Imagens/img_icones/eco.png</iconset>
     </property>
    </item>
    <item>
@@ -144,7 +144,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Resources/icones_cursos/computacao.jpg</normaloff>../Resources/icones_cursos/computacao.jpg</iconset>
+      <normaloff>../Imagens/img_icones/comp.ico</normaloff>../Imagens/img_icones/comp.ico</iconset>
     </property>
    </item>
    <item>
@@ -153,7 +153,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Resources/icones_cursos/plainicon.com-45939-512px.png</normaloff>../Resources/icones_cursos/plainicon.com-45939-512px.png</iconset>
+      <normaloff>../Imagens/img_icones/mec.png</normaloff>../Imagens/img_icones/mec.png</iconset>
     </property>
    </item>
    <item>
@@ -162,7 +162,7 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../Resources/icones_cursos/meca.png</normaloff>../Resources/icones_cursos/meca.png</iconset>
+      <normaloff>../Imagens/img_icones/meca.png</normaloff>../Imagens/img_icones/meca.png</iconset>
     </property>
    </item>
   </widget>
@@ -353,7 +353,7 @@
     </font>
    </property>
    <property name="inputMethodHints">
-    <set>Qt::ImhNone</set>
+    <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText</set>
    </property>
    <property name="text">
     <string/>
@@ -818,7 +818,7 @@
   <tabstop>botao_cadastrar</tabstop>
  </tabstops>
  <resources>
-  <include location="../Resources/tela_cadastro.qrc"/>
+  <include location="../QRC/tela_cadastro.qrc"/>
  </resources>
  <connections/>
 </ui>

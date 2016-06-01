@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Resources/system_icon.png</normaloff>../Resources/system_icon.png</iconset>
+    <normaloff>../Imagens/img_icones/system_icon.png</normaloff>../Imagens/img_icones/system_icon.png</iconset>
   </property>
   <widget class="QLabel" name="bg_perfil">
    <property name="geometry">
@@ -45,7 +45,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/tela_perfil/tela_perfil.png);</string>
+    <string notr="true">background-image: url(:/tela_perfil/Imagens/img_bg/tela_perfil.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -367,12 +367,12 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../Resources/botaoenviar - 42x42.png</normaloff>../Resources/botaoenviar - 42x42.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</iconset>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="../Resources/tela_perfil.qrc"/>
+  <include location="../QRC/tela_perfil.qrc"/>
  </resources>
  <connections/>
 </ui>

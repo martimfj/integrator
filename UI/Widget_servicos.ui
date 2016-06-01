@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../system_icon.png</normaloff>../system_icon.png</iconset>
+    <normaloff>../Imagens/img_icones/system_icon.png</normaloff>../Imagens/img_icones/system_icon.png</iconset>
   </property>
   <widget class="QLabel" name="bg_servicos">
    <property name="geometry">
@@ -63,7 +63,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/tela_servicos/tela_servicos.png);</string>
+    <string notr="true">background-image: url(:/tela_servicos/Imagens/img_bg/tela_servicos.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -98,7 +98,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../botaoenviar - 42x42.png</normaloff>../botaoenviar - 42x42.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</iconset>
    </property>
   </widget>
   <widget class="QCommandLinkButton" name="botao_voltar_servicos">
@@ -115,7 +115,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../botaoenviar - 42x42.png</normaloff>../botaoenviar - 42x42.png</iconset>
+     <normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</normaloff>../Imagens/img_botoes/botaoenviar - 42x42.png</iconset>
    </property>
   </widget>
  </widget>
@@ -127,7 +127,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../tela_servicos.qrc"/>
+  <include location="../QRC/tela_servicos.qrc"/>
  </resources>
  <connections/>
 </ui>

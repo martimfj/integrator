@@ -1,17 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Widget_servicos.ui'
-#
-# Created by: PyQt5 UI code generator 5.6
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt4 import QtCore, QtGui
-import sys
-from PyQt4.QtGui import QApplication
-from PyQt4.QtCore import QUrl
-from PyQt4.QtWebKit import QWebView
-import tela_servicos_rc
 
 class Ui_tela_servicos(object):
     def setupUi(self):
@@ -25,7 +12,7 @@ class Ui_tela_servicos(object):
         self.setMinimumSize(QtCore.QSize(640, 480))
         self.setMaximumSize(QtCore.QSize(640, 480))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../Imagens/img_icones/system_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
         self.bg_servicos = QtGui.QLabel(self)
         self.bg_servicos.setGeometry(QtCore.QRect(-2, 0, 640, 480))
@@ -36,22 +23,18 @@ class Ui_tela_servicos(object):
         self.bg_servicos.setSizePolicy(sizePolicy)
         self.bg_servicos.setMinimumSize(QtCore.QSize(640, 480))
         self.bg_servicos.setMaximumSize(QtCore.QSize(640, 480))
-        self.bg_servicos.setStyleSheet("background-image: url(:/tela_servicos/tela_servicos.png);")
+        self.bg_servicos.setStyleSheet("background-image: url(:/tela_servicos/Imagens/img_bg/tela_servicos.png);")
         self.bg_servicos.setText("")
         self.bg_servicos.setObjectName("bg_servicos")
-
         self.webview_mapagoogle = QtWebKitWidgets.QWebView(self)
         self.webview_mapagoogle.setGeometry(QtCore.QRect(10, 12, 616, 406))
         self.webview_mapagoogle.setUrl(QtCore.QUrl("about:blank"))
         self.webview_mapagoogle.setObjectName("webview_mapagoogle")
-        self.webview_mapagoogle.load(QUrl("https://www.google.com.br/maps/@-23.5979074,-46.6773694,16.96z"))
-
         self.botao_lugares_reco = QtGui.QCommandLinkButton(self)
         self.botao_lugares_reco.setGeometry(QtCore.QRect(4, 436, 92, 37))
         self.botao_lugares_reco.setText("")
-
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../botaoenviar - 42x42.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../Imagens/img_botoes/botaoenviar - 42x42.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.botao_lugares_reco.setIcon(icon1)
         self.botao_lugares_reco.setObjectName("botao_lugares_reco")
         self.botao_voltar_servicos = QtGui.QCommandLinkButton(self)
@@ -67,10 +50,5 @@ class Ui_tela_servicos(object):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("tela_servicos", "Integrator"))
 
-if __name__ == '__main__':
-    app = QtGui.QApplication([])
-    window = Ui_tela_servicos()
-    window.show()
-    app.exec_()
-
-
+from PyQt5 import QtWebKitWidgets
+import tela_servicos_rc
